@@ -5,6 +5,8 @@
     --text-color: #333;
     --border-color: #dbdbdb;
 
+    --start-gold-color: #ffce3e;
+
     --navbar-height: 30px;
     --header-height: 120px;
     --header-width-search-height: calc(var(--header-height) - var(--navbar-height))

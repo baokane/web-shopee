@@ -130,3 +130,31 @@ html {
     background-color: var(--primary-color);
     color: var(--white-color);
 }
+
+/* Pagination */
+.pagination {
+    font-size: 2rem;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 48px 0 32px 0;
+}
+
+.pagination-item {
+    margin: 0 25px;
+}
+
+.pagination-item__link {
+    text-decoration: none;
+    color: #939393;
+    font-weight: 300;
+}
+
+.pagination-item__icon {}
+
+.pagination-item__active .pagination-item__link {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 2px 14px;
+    border-radius: 2px;
+}

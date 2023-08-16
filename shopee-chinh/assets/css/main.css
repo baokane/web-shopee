@@ -216,6 +216,54 @@
     margin-right: 20px;
 }
 
+/* Header sort */
+.header__sort-bar {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    height: var(--header-sort-bar-height);
+    /* display: flex; */
+    background-color: var(--white-color);
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    display: none;
+}
+
+.header__sort-item {
+    flex: 1;
+}
+
+.header__sort-link {
+    position: relative;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    display: block;
+    height: 100%;
+    line-height: var(--header-sort-bar-height);
+    text-align: center;
+}
+
+.header__sort-link::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    height: 60%;
+    border-left: 1px solid #e5e5e5;
+}
+
+.header__sort-item--active .header__sort-link {
+    color: var(--primary-color);
+}
+
+.header__sort-item:first-child .header__sort-link::after {
+    display: none;
+}
+
 /* header notifycation */
 .header__notify {
     position: absolute;
@@ -473,6 +521,17 @@
     margin: 0 8px;
 }
 
+/*  */
+.header__mobile-search {
+    padding: 0 12px;
+}
+
+.header__mobile-search-icon {
+    font-size: 2.6rem;
+    color: var(--white-color);
+}
+
+
 .header__logo {
     width: 200px;
 }
@@ -484,6 +543,8 @@
 .header__logo-link {
     text-decoration: none;
     color: transparent;
+    display: block;
+    line-height: 0;
 }
 
 .header__search {
@@ -941,13 +1002,15 @@
     padding: 6px 20px;
     display: block;
     position: relative;
-    right: 0;
-    transition: right linear .1s;
+    /* right: 0;
+    transition: right linear .1s; */
+    transition: transform linear .1s;
 }
 
 .categoty-item__link:hover {
-    right: -4px;
+    /* right: -4px; */
     color: var(--primary-color);
+    transform: translateX(-4px);
 }
 
 /* Home sort + filter */
@@ -1032,12 +1095,15 @@
     background-color: var(--white-color);
     border-radius: 2px;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
-    transition: transform ease-in .1s;
+    /* transition: transform ease-in .1s; */
+    bottom: 0;
+    transition: bottom linear .1s;
 }
 
 .home-product-item:hover {
     box-shadow: 0 1px 20px 0 rgba(0, 0, 0, .05);
-    transform: translateY(-1px);
+    /* transform: translateY(-1px); */
+    bottom: -6px;
 }
 
 .home-product-item__img {

@@ -4,6 +4,43 @@
     background-image: linear-gradient(#f53d2d, #ff6533);
 }
 
+/* Header sortbar */
+.header__sort-bar {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--white-color);
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.header__sort-item {
+    flex: 1;
+}
+
+.header__sort-link {
+    line-height: var(--header-sort-bar-height);
+    display: block;
+    font-size: 1.4rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-color);
+    position: relative;
+}
+
+.header__sort-link::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    height: 60%;
+    /* width: 1px;
+    background-color: #cfcbcb; */
+    border-left: 1px solid #dad9d9;
+}
+
+
 .header__navbar {
     display: flex;
     justify-content: space-between;
@@ -20,6 +57,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    z-index: 1;
 }
 
 .header__navbar-item:hover .header__user-list-menu {
@@ -124,7 +162,11 @@
 /* header QR */
 .header__qr {
     position: absolute;
+    top: 100%;
+    left: 0;
     width: 186px;
+    z-index: 1;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     background-color: var(--white-color);
     margin-top: 10px;
     display: none;
@@ -385,8 +427,32 @@
 .header__with-search {
     height: var(--header-with-search-height);
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
+
+
+
+
+
+/* Input */
+.nav-sort-bar__input {
+    display: none;
+}
+
+.nav-sort-bar__input:checked~.header__search {
+    display: flex;
+}
+
+/* search */
+.nav-search {}
+
+.nav-search__btn {
+    font-size: 2.6rem;
+    color: var(--white-color);
+    padding: 0 12px;
+}
+
 
 .header__logo {
     width: 200px;
@@ -403,9 +469,12 @@
     position: relative;
 }
 
+
 .header__search-input:focus~.header__search-history {
     display: block;
 }
+
+
 
 .header__search .header__search-input {
     width: 100%;
@@ -430,6 +499,7 @@
     margin-top: 2px;
     border-radius: 2px;
     display: none;
+    z-index: 1;
 }
 
 .header__search-history-list {
@@ -567,6 +637,7 @@
     margin-top: 10px;
     box-shadow: 0 1px 3px #999;
     display: none;
+    z-index: 2;
 }
 
 .header__cart-list::after {
@@ -788,6 +859,7 @@
     background-color: var(--white-color);
     height: 34px;
     padding: 0 16px;
+    z-index: 1;
 }
 
 .select-option:hover .select-option__list {

@@ -6,12 +6,18 @@
 
 /* Header sortbar */
 .header__sort-bar {
+    position: fixed;
+    top: var(--header-height);
+    right: 0;
+    left: 0;
     display: flex;
     justify-content: space-between;
     background-color: var(--white-color);
     list-style: none;
     padding-left: 0;
     margin: 0;
+    z-index: 1;
+    display: none;
 }
 
 .header__sort-item {
@@ -28,6 +34,10 @@
     position: relative;
 }
 
+.header__sort-link--active {
+    color: var(--primary-color);
+}
+
 .header__sort-link::after {
     content: '';
     position: absolute;
@@ -39,7 +49,6 @@
     background-color: #cfcbcb; */
     border-left: 1px solid #dad9d9;
 }
-
 
 .header__navbar {
     display: flex;
@@ -432,14 +441,7 @@
 }
 
 
-
-
-
 /* Input */
-.nav-sort-bar__input {
-    display: none;
-}
-
 .nav-sort-bar__input:checked~.header__search {
     display: flex;
 }
@@ -499,7 +501,7 @@
     margin-top: 2px;
     border-radius: 2px;
     display: none;
-    z-index: 1;
+    z-index: 2;
 }
 
 .header__search-history-list {
@@ -864,6 +866,57 @@
 
 .select-option:hover .select-option__list {
     display: block;
+}
+
+/* Category on mobile & tablet */
+.category-on-mobile-tablet {
+    margin: 0;
+}
+
+.category-on-mobile-tablet__list {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    overflow-x: auto;
+}
+
+.category-on-mobile-tablet__list::-webkit-scrollbar {
+    display: none;
+}
+
+.category-on-mobile-tablet__item {
+    flex-shrink: 0;
+}
+
+.category-on-mobile-tablet__item:nth-child(3n + 1) {
+    background-color: red;
+}
+
+.category-on-mobile-tablet__item:nth-child(3n + 1) {
+    background-color: red;
+}
+
+.category-on-mobile-tablet__item:nth-child(3n + 1) {
+    background-color: red;
+}
+
+.category-on-mobile-tablet__link {
+    --line-height: 2rem;
+    line-height: var(--line-height);
+    height: calc(var(--line-height) * 2);
+    width: 110px;
+    overflow: hidden;
+    font-size: 1.4rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-color);
+    -webkit-tap-highlight-color: transparent;
+    /* user-select: none; */
+    /* -webkit-user-select: none; */
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 
 /* select option */

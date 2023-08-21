@@ -65,6 +65,10 @@
     .category-on-mobile-tablet {
         display: block;
     }
+
+    .nav-list__wrap {
+        display: block;
+    }
 }
 
 /* Mobile */
@@ -145,6 +149,18 @@
 
     .app {
         overflow: hidden;
+    }
+
+    .header__logo {
+        margin-right: 30px;
+    }
+
+    .nav-list__mobile-btn {
+        padding: 0 6px;
+    }
+
+    .nav-list__mobile-list {
+        width: 200px;
     }
 }
 
